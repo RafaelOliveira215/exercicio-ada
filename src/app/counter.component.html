@@ -1,0 +1,21 @@
+<section class="counter">
+  <p class="message" [class.hidden]="!mensagem()">{{ mensagem() }}</p>
+
+  <p class="date">{{ hoje() | date:'EEEE, dd/MM/yyyy HH:mm:ss' }}</p>
+
+  <h2>
+    <span class="label">Valor:</span>
+    <span class="value">{{ valor() | currency:'BRL':'symbol':'1.2-2' }}</span>
+  </h2>
+
+  <div class="controls">
+    <button 
+      class="btn-decrement" 
+      (click)="decrement()" 
+      [disabled]="decrementDisabled()">-1</button>
+    <button 
+      class="btn-increment" 
+      (click)="increment()" 
+      [disabled]="incrementDisabled()">+1</button>
+  </div>
+</section>
